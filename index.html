@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101211"><title>HOUR / 디지털 모래시계</title><link rel="stylesheet" href="./style.css"></head>
+<body><main>
+<header><a class="wordmark" href="./">HOUR<span> / </span></a><span class="edition">DIGITAL HOURGLASS<br>실물과 연결되는 시간</span></header>
+<section class="instrument" aria-label="디지털 모래시계 제어">
+<div class="visual">
+<div class="visual-top"><span id="connection" class="badge">연결 전</span><span id="render-mode">3D VIEW</span></div>
+<div class="scene"><canvas id="hourglass" width="800" height="800" aria-label="실물 LED 128칸과 화면 평면 기울기를 재현하는 모래시계"></canvas><div class="scene-shadow"></div></div>
+<div class="visual-bottom"><span>128 CELLS<br><strong>64 grains of time.</strong></span><span class="view-note">기울기는 실물에서.<br>원근감은 화면 연출입니다.</span></div>
+</div>
+<aside class="console">
+<div class="console-title"><span class="eyebrow">LIVE INSTRUMENT / 01</span><h1>시간의 움직임</h1><p id="device">내 모래시계를 연결하세요</p></div>
+<section aria-label="장치 연결"><div class="buttons"><button id="connect" class="primary" disabled>블루투스 연결 ↗</button><button id="disconnect" disabled>연결 해제</button></div><p id="message" role="status" aria-live="polite">연결하면 실물의 현재 상태를 가져옵니다.</p></section>
+<section class="time-section" aria-label="시간 설정">
+<div class="section-heading"><label for="minutes">기준 시간 설정</label><output id="selected-time" for="minutes">01<span> MIN</span></output></div>
+<input id="minutes" type="range" min="1" max="10" step="1" value="1" aria-valuetext="1분">
+<div class="ticks" aria-label="분 눈금"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+<button id="restart" class="wide" disabled>적용하고 다시 시작 ↻</button><p class="hint">수직으로 세웠을 때의 기준 시간입니다. 적용하면 현재 위쪽 방에 64알을 새로 채웁니다.</p>
+</section>
+<section class="color-section" aria-label="웹 LED 색상">
+<div class="section-heading"><h2>LED 표현색</h2><span class="eyebrow">WEB ONLY</span></div>
+<div class="color-row"><label for="upper-color">위 모듈 <small>A</small></label><div class="palette" data-module="upper"></div><input type="color" id="upper-color" value="#ffc56e" aria-label="위 모듈 RGB 색상 직접 선택"></div>
+<div class="color-row"><label for="lower-color">아래 모듈 <small>B</small></label><div class="palette" data-module="lower"></div><input type="color" id="lower-color" value="#75d7c8" aria-label="아래 모듈 RGB 색상 직접 선택"></div>
+<p class="hint">웹 화면의 색만 변경됩니다. 색은 뒤집어도 같은 모듈을 따라갑니다.</p>
+</section>
+<section class="telemetry" aria-label="실시간 상태"><p id="state">연결을 기다리고 있어요</p><dl><div><dt>적용된 기준 시간</dt><dd id="duration">—</dd></div><div><dt>실제 경과 시간</dt><dd id="elapsed">—</dd></div><div><dt>위 / 아래 모래</dt><dd id="grains">—</dd></div><div><dt>화면 평면 기울기</dt><dd id="angle">—</dd></div></dl></section>
+<div class="audio"><label><input id="sound" type="checkbox" checked> 완료 알림음</label><button id="test-sound">소리 테스트 ♪</button></div>
+</aside></section>
+<footer><span>HOUR / DIGITAL TWIN</span><p>Windows · Chrome / Edge · HTTPS 또는 localhost<br>연결이 끊겨도 실물은 계속 작동합니다. 웹 알림음은 페이지를 열어 둔 동안 사용하세요.</p></footer>
+</main><script type="module" src="./app.mjs"></script></body></html>
