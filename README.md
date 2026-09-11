@@ -4,7 +4,7 @@ ESP32-C3 모래시계와 BLE로 연결하는 웹 디지털 트윈입니다. 이 
 
 ## 페이지 열기
 
-저장소의 GitHub Pages 주소를 Chrome 또는 Edge에서 여세요. GitHub의 코드 보기 화면과 실제 웹페이지 주소는 다릅니다. 저장소 관리자는 Settings → Pages에서 게시 주소를 확인할 수 있습니다.
+저장소의 GitHub Pages 주소(https://yeomjaemoo.github.io/digital-hourglass/)를 Chrome 또는 Edge에서 여세요. GitHub의 코드 보기 화면과 실제 웹페이지 주소는 다릅니다. 저장소 관리자는 Settings → Pages에서 게시 주소를 확인할 수 있습니다.
 
 ## 사용 순서
 
